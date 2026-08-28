@@ -1,6 +1,7 @@
 "use client";
 
 import { MapPin } from "lucide-react";
+import Image from "next/image";
 
 import { about, site } from "@/data/content";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -14,23 +15,18 @@ export function About() {
       <SectionHeading index="01" eyebrow="About Me" title="A bit about who I am" />
 
       <div className="mt-12 grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-        {/* Profile photo placeholder */}
+        {/* Profile photo */}
         <Reveal className="order-1 lg:order-none">
           <div className="group relative mx-auto w-full max-w-xs">
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/30 via-accent/20 to-signal/20 opacity-60 blur-2xl transition-opacity duration-500 group-hover:opacity-90" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-surface shadow-lift">
-              {/*
-                TODO: drop a photo at /public/profile.jpg and swap this block for:
-                <Image src="/profile.jpg" alt="Chirag Bang" fill className="object-cover" />
-              */}
-              <div className="flex h-full w-full flex-col items-center justify-center bg-dot-grid">
-                <span className="font-display text-7xl font-bold text-gradient">
-                  CB
-                </span>
-                <span className="mt-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  /public/profile.jpg
-                </span>
-              </div>
+            <div className="relative aspect-[2/3] overflow-hidden rounded-3xl border border-border bg-background shadow-lift">
+              <Image
+                src="/profile.jpg.png"
+                alt="Chirag Bang"
+                fill
+                sizes="(max-width: 1024px) 100vw, 320px"
+                className="object-contain mix-blend-screen"
+              />
             </div>
           </div>
         </Reveal>

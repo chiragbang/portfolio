@@ -45,11 +45,11 @@ export function Footer() {
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
-          <p>
+          {/* <p>
             Built with{" "}
             <span className="text-foreground">Next.js</span> &{" "}
             <span className="text-foreground">Tailwind</span>.
-          </p>
+          </p> */}
           <Button
             asChild
             variant="outline"

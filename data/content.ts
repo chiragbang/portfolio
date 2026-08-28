@@ -93,9 +93,8 @@ export const navItems: NavItem[] = [
 ];
 
 export const socials: SocialLink[] = [
-  // TODO: replace # with your real profile URLs
-  { label: "GitHub", href: "https://github.com/", icon: "github" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: "linkedin" },
+  { label: "GitHub", href: "https://github.com/chiragbang", icon: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/chirag-bang/", icon: "linkedin" },
   { label: "Email", href: "mailto:chiragbang33@gmail.com", icon: "mail" },
 ];
 
