@@ -60,7 +60,7 @@ export function ChatWidget() {
               height: 440,
               marginBottom: 12,
               borderRadius: 16,
-              background: "var(--background, #111)",
+              background: "hsl(var(--background))",
               border: "1px solid rgba(255,255,255,0.1)",
               display: "flex",
               flexDirection: "column",

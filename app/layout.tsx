@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { site, socials } from "@/data/content";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import { ChatWidget } from "@/components/chat-widget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -116,6 +117,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <ChatWidget />
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans`}
       >
