@@ -117,7 +117,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ChatWidget />
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans`}
       >
@@ -129,6 +128,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <ChatWidget />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 type Message = { role: "user" | "assistant"; text: string };
 
@@ -48,7 +49,7 @@ export function ChatWidget() {
   }
 
   return (
-    <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 50 }}>
+    <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 50, fontFamily: "var(--font-inter), sans-serif" }}>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -73,7 +74,7 @@ export function ChatWidget() {
             </div>
 
             <div style={{ flex: 1, overflowY: "auto", padding: 16, display: "flex", flexDirection: "column", gap: 10 }}>
-              {messages.map((m, i) => (
+               {messages.map((m, i) => (
                 <div
                   key={i}
                   style={{
@@ -87,7 +88,13 @@ export function ChatWidget() {
                     lineHeight: 1.5,
                   }}
                 >
-                  {m.text}
+                  {m.role === "assistant" ? (
+                    <div className="markdown-message">
+                      <ReactMarkdown>{m.text}</ReactMarkdown>
+                    </div>
+                  ) : (
+                    m.text
+                  )}
                 </div>
               ))}
               {loading && (
@@ -109,6 +116,7 @@ export function ChatWidget() {
                   border: "1px solid rgba(255,255,255,0.15)",
                   background: "transparent",
                   fontSize: 14,
+                  fontFamily: "inherit",
                   outline: "none",
                 }}
               />
@@ -124,6 +132,7 @@ export function ChatWidget() {
                   alignItems: "center",
                   justifyContent: "center",
                   cursor: "pointer",
+                  fontFamily: "inherit",
                 }}
               >
                 <Send size={16} color="#fff" />
